@@ -1,5 +1,4 @@
 <?php
-require "dados.php";
 
 $id = readline("Digite o ID do livro que quer remover: ");
 
@@ -31,7 +30,7 @@ if (strtolower($confirmar) == "s") {
 
     $livros = array_values($livros);
 
-    file_put_contents("dados.php", "<?php\n\$livros = " . var_export($livros, true) . ";\n");
+    file_put_contents($dataFile, json_encode($livros, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
     echo "\nLivro removido com sucesso!\n";
 

@@ -1,10 +1,8 @@
 <?php
 
-require "dados.php";
-
 echo "\n===== LISTA DE LIVROS =====\n";
 
-if (!isset($livros)) {
+if (!isset($livros) || empty($livros)) {
     echo "Nenhum livro cadastrado ainda.\n";
 } else {
     foreach ($livros as $livro) {

@@ -1,5 +1,9 @@
 <?php
 
+$dataFile = "dados.json";
+
+$livros = json_decode(file_get_contents($dataFile), true);
+
 while (true){
 
 echo "\n==============================\n";

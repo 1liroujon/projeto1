@@ -1,6 +1,5 @@
 <?php
 
-require "dados.php"; 
 if (!isset($livros)){
     $livros = [];
 }
@@ -34,7 +33,7 @@ $livro = [
 
 $livros[] = $livro;
 
-file_put_contents("dados.php", "<?php\n\$livros = " . var_export($livros, true) . ";\n");
+file_put_contents($dataFile, json_encode($livros, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 echo "\nLivro cadastrado com sucesso!\n";
 

@@ -1,5 +1,4 @@
 <?php
-require "dados.php";
 
 $id = readline("Digite o ID do livro que quer editar: ");
 
@@ -19,16 +18,17 @@ if ($indice === null) {
 echo "\n===== EDITAR LIVRO (aperte Enter para manter valor atual) =====\n";
 
 
-$titulo = readline("Título ({$livros[$indice]['titulo']}): ");
+ $titulo = readline("Título ({$livros[$indice]['titulo']}): ");
 if (trim($titulo) != "") {
     $livros[$indice]['titulo'] = $titulo;
 }
 
 
-$autor = readline("Autor ({$livros[$indice]['autor']}): ");
+ $autor = readline("Autor ({$livros[$indice]['autor']}): ");
 if (trim($autor) != "") {
     $livros[$indice]['autor'] = $autor;
 }
+
 
 
 $quantidade = readline("Quantidade ({$livros[$indice]['quantidade']}): ");
@@ -37,7 +37,7 @@ if (trim($quantidade) != "") {
 }
 
 
-file_put_contents("dados.php", "<?php\n\$livros = " . var_export($livros, true) . ";\n");
+file_put_contents($dataFile, json_encode($livros, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 echo "\nLivro atualizado com sucesso!\n";
 

@@ -1,14 +1,20 @@
 <?php
 
-require("dados.php");
+if (!isset($livros) || !is_array($livros)) {
+    $lista = [];
+} else {
+    $lista = $livros;
+}
 
-$totalLivrosDiferentes = count($livros);
+$totalLivrosDiferentes = count($lista);
 $totalExemplares = 0;
 $autores = [];
 
-foreach ($livros as $livro) {
-    $totalExemplares += $livro["quantidade"];
-    $autores[] = $livro["autor"];
+foreach ($lista as $livro) {
+    $totalExemplares += isset($livro["quantidade"]) ? (int)$livro["quantidade"] : 0;
+    if (isset($livro["autor"])) {
+        $autores[] = $livro["autor"];
+    }
 }
 
 $totalAutores = count(array_unique($autores));
