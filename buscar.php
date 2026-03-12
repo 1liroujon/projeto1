@@ -19,6 +19,6 @@ if (!empty($achados)) {
         echo "- ID: {$l['id']} | Título: {$l['titulo']} | Autor: {$l['autor']} | Quantidade: {$l['quantidade']}\n";
     }
 } else {
-    echo "\nNenhum livro encontrado com esse busca.\n";
+    echo "\nNenhum livro encontrado com essa busca.\n";
 }
 ?>

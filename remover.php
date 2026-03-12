@@ -29,6 +29,11 @@ if (strtolower($confirmar) == "s") {
     unset($livros[$indice]);
 
     $livros = array_values($livros);
+    
+    // Recalcular IDs
+    foreach ($livros as $key => $livro) {
+        $livros[$key]['id'] = $key + 1;
+    }
 
     file_put_contents($dataFile, json_encode($livros, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 

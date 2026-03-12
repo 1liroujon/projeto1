@@ -2,6 +2,10 @@
 
 $dataFile = "dados.json";
 
+if (!file_exists($dataFile)) {
+    file_put_contents($dataFile, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
 $livros = json_decode(file_get_contents($dataFile), true);
 
 while (true){

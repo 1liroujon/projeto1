@@ -4,7 +4,11 @@ if (!isset($livros)){
     $livros = [];
 }
 
-$id = count($livros) + 1 ;
+$id = 1;
+if (!empty($livros)) {
+    $maxId = max(array_column($livros, 'id'));
+    $id = $maxId + 1;
+}
 
 echo "\n===== CADASTRAR LIVRO =====\n";
 

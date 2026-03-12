@@ -3,36 +3,18 @@
         "id": 1,
         "titulo": "O Senhor dos Anéis",
         "autor": "J.R.R. Tolkien",
-        "quantidade": 1954
+        "quantidade": 5
     },
     {
         "id": 2,
         "titulo": "1984",
         "autor": "George Orwell",
-        "quantidade": 1949
+        "quantidade": 3
     },
     {
         "id": 3,
         "titulo": "A Guerra dos Tronos",
         "autor": "George R.R. Martin",
-        "quantidade": 1996
-    },
-    {
-        "id": 4,
-        "titulo": "asdf",
-        "autor": "asdf",
-        "quantidade": 123
-    },
-    {
-        "id": 5,
-        "titulo": "as",
-        "autor": "df",
-        "quantidade": 12312321
-    },
-    {
-        "id": 6,
-        "titulo": "ws",
-        "autor": "s",
-        "quantidade": 3
+        "quantidade": 2
     }
 ]
